@@ -4,10 +4,18 @@ Defines [Docker][1] aliases and functions.
 
 ## How to Install
 
-### With [zplug][2]
+## Install for Zinit
+> `~/.zshrc`
+```sh
+source "$HOME/.zinit/bin/zinit.zsh"
+zinit ice lucid nocompile wait'0e' nocompletions
+zinit load MenkeTechnologies/zsh-docker-aliases
+```
+
+## Install for Oh My Zsh
 
 ```sh
-zplug "akarzim/zsh-docker-aliases"
+cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechnologies/zsh-docker-aliases.git
 ```
 
 ## Aliases
@@ -62,73 +70,73 @@ zplug "akarzim/zsh-docker-aliases"
 - `dkw` Block until a container stops, then print its exit code<Paste>
 - `dkx` Stop a running container
 
-#### container (C)
+#### container (c)
 
-- `dkC` Manage containers
-- `dkCa` Attach to a running container
-- `dkCcp` Copy files/folders between a container and the local filesystem
-- `dkCd` Inspect changes on a container's filesystem
-- `dkCe` Run a command in a running container
-- `dkCE` Run an interactive command in a running container
-- `dkCin` Display detailed information on one or more containers
-- `dkCk` Kill one or more running containers
-- `dkCl` Fetch the logs of a container
-- `dkCL` Fetch and follow (`-f`) the logs of a container
-- `dkCls` List containers
-- `dkCp` Pause all processes within one or more containers
-- `dkCpr` Remove all stopped containers
-- `dkCrn` Rename a container
-- `dkCS` Restart one or more containers
-- `dkCrm` Remove one or more containers
-- `dkCr` Run a command in a new container
-- `dkCR` Run an interactive command in a new container and automatically remove the container when it exits
-- `dkCRe` like `dkCR` and set entry point to `/bin/bash`
-- `dkCs` Start one or more stopped containers
-- `dkCss` Display a live stream of container(s) resource usage statistics
-- `dkCx` Stop one or more running containers
-- `dkCtop` Display the running processes of a container
-- `dkCP` Unpause all processes within one or more containers
-- `dkCup` Update configuration of one or more containers
-- `dkCw` Block until one or more containers stop, then print their exit codes
+- `dkc` Manage containers
+- `dkca` Attach to a running container
+- `dkccp` Copy files/folders between a container and the local filesystem
+- `dkcd` Inspect changes on a container's filesystem
+- `dkce` Run a command in a running container
+- `dkcE` Run an interactive command in a running container
+- `dkcin` Display detailed information on one or more containers
+- `dkck` Kill one or more running containers
+- `dkcl` Fetch the logs of a container
+- `dkcL` Fetch and follow (`-f`) the logs of a container
+- `dkcls` List containers
+- `dkcp` Pause all processes within one or more containers
+- `dkcpr` Remove all stopped containers
+- `dkcrn` Rename a container
+- `dkcS` Restart one or more containers
+- `dkcrm` Remove one or more containers
+- `dkcr` Run a command in a new container
+- `dkcR` Run an interactive command in a new container and automatically remove the container when it exits
+- `dkcRe` like `dkCR` and set entry point to `/bin/bash`
+- `dkcs` Start one or more stopped containers
+- `dkcss` Display a live stream of container(s) resource usage statistics
+- `dkcx` Stop one or more running containers
+- `dkctop` Display the running processes of a container
+- `dkcP` Unpause all processes within one or more containers
+- `dkcup` Update configuration of one or more containers
+- `dkcw` Block until one or more containers stop, then print their exit codes
 
 #### image (I)
 
-- `dkI` Manage images
-- `dkIb` Build an image from a Dockerfile
-- `dkIh` Show the history of an image
-- `dkIim` Import the contents from a tarball to create a filesystem image
-- `dkIin` Display detailed information on one or more images
-- `dkIls` List images
-- `dkIpr` Remove unused images
-- `dkIpl` Pull an image or a repository from a registry
-- `dkIph` Push an image or a repository to a registry
-- `dkIrm` Remove one or more images
-- `dkIsv` Save one or more images to a tar archive (streamed to STDOUT by default)
-- `dkIt` Tag an image into a repository
+- `dki` Manage images
+- `dkib` Build an image from a Dockerfile
+- `dkih` Show the history of an image
+- `dkiim` Import the contents from a tarball to create a filesystem image
+- `dkiin` Display detailed information on one or more images
+- `dkils` List images
+- `dkipr` Remove unused images
+- `dkipl` Pull an image or a repository from a registry
+- `dkiph` Push an image or a repository to a registry
+- `dkirm` Remove one or more images
+- `dkisv` Save one or more images to a tar archive (streamed to STDOUT by default)
+- `dkit` Tag an image into a repository
 
 #### volume (V)
 
-- `dkV` Manage volumes
-- `dkVin` Display detailed information on one or more volumes
-- `dkVls` List volumes
-- `dkVpr` Remove all unused volumes
-- `dkVrm` Remove one or more volumes
+- `dkv` Manage volumes
+- `dkvin` Display detailed information on one or more volumes
+- `dkvls` List volumes
+- `dkvpr` Remove all unused volumes
+- `dkvrm` Remove one or more volumes
 
 #### network (N)
 
-- `dkN` Manage networks
-- `dkNs` Connect a container to a network
-- `dkNx` Disconnects a container from a network
-- `dkNin` Displays detailed information on a network
-- `dkNls` Lists all the networks created by the user
-- `dkNpr` Remove all unused networks
-- `dkNrm` Deletes one or more networks
+- `dkn` Manage networks
+- `dkns` Connect a container to a network
+- `dknx` Disconnects a container from a network
+- `dknin` Displays detailed information on a network
+- `dknls` Lists all the networks created by the user
+- `dknpr` Remove all unused networks
+- `dknrm` Deletes one or more networks
 
 #### system (Y)
 
-- `dkY` Manage Docker
-- `dkYdf` Show docker filesystem usage
-- `dkYpr` Remove unused data
+- `dky` Manage Docker
+- `dkydf` Show docker filesystem usage
+- `dkypr` Remove unused data
 
 #### stack (K)
 
@@ -139,7 +147,7 @@ zplug "akarzim/zsh-docker-aliases"
 
 #### swarm (W)
 
-- `dkW` Manage Docker Swarm
+- `dkw` Manage Docker Swarm
 
 ### Docker Machine
 
@@ -167,31 +175,31 @@ zplug "akarzim/zsh-docker-aliases"
 
 ### Docker Compose
 
-- `dkc` is short for `docker-compose`
-- `dkcb` Build or rebuild services
-- `dkcB` Build or rebuild services and do not use cache when building the image
-- `dkcd` Stop and remove containers, networks, images, and volumes
-- `dkce` Execute a command in a running container
-- `dkck` Kill containers
-- `dkcl` View output from containers
-- `dkcL` View and follow (`-f`) output from containers
-- `dkcls` is alias for `dkcps`
-- `dkcp` Pause services
-- `dkcP` Unpause services
-- `dkcpl` Pull service images
-- `dkcph` Push service images
-- `dkcps` List containers
-- `dkcr` Run a one-off command
-- `dkcR` Run a one-off command and remove container after run.
-- `dkcrm` Remove stopped containers
-- `dkcs` Start services
-- `dkcsc` Set number of containers for a service
-- `dkcS` Restart services
-- `dkcu` Create and start containers
-- `dkcU` Create and start containers in detached mode:
-           Run containers in the background, print new container names
-- `dkcV` Show the Docker-Compose version information
-- `dkcx` Stop services
+- `dkC` is short for `docker-compose`
+- `dkCb` Build or rebuild services
+- `dkCB` Build or rebuild services and do not use cache when building the image
+- `dkCd` Stop and remove containers, networks, images, and volumes
+- `dkCe` Execute a command in a running container
+- `dkCk` Kill containers
+- `dkCl` View output from containers
+- `dkCL` View and follow (`-f`) output from containers
+- `dkCls` is alias for `dkcps`
+- `dkCp` Pause services
+- `dkCP` Unpause services
+- `dkCpl` Pull service images
+- `dkCph` Push service images
+- `dkCps` List containers
+- `dkCr` Run a one-off command
+- `dkCR` Run a one-off command and remove container after run.
+- `dkCrm` Remove stopped containers
+- `dkCs` Start services
+- `dkCsc` Set number of containers for a service
+- `dkCS` Restart services
+- `dkCu` Create and start containers
+- `dkCU` Create and start containers in detached mode:
+           Run Containers in the background, print new container names
+- `dkCV` Show the Docker-Compose version information
+- `dkCx` Stop services
 
 ## Author
 
