@@ -1,15 +1,5 @@
-#
-# Defines Docker aliases.
-#
-# Author:
-#   François Vantomme <akarzim@gmail.com>
-#
-
-#
-# Aliases
-#
-
-# Docker
+#{{{                    MARK:Docker
+#**************************************************************
 alias dk='docker'
 alias dka='docker attach'
 alias dkb='docker build'
@@ -53,8 +43,10 @@ alias dkv='docker volume'
 alias dkvs='docker version'
 alias dkw='docker wait'
 alias dkx='docker stop'
+#}}}***********************************************************
 
-## Container (c)
+#{{{                    MARK:container
+#**************************************************************
 alias dkc='docker container'
 alias dkca='docker container attach'
 alias dkccp='docker container cp'
@@ -81,8 +73,10 @@ alias dkctop='docker container top'
 alias dkcP='docker container unpause'
 alias dkcup='docker container update'
 alias dkcw='docker container wait'
+#}}}***********************************************************
 
-## Image (i)
+#{{{                    MARK:image
+#**************************************************************
 alias dki='docker image'
 alias dkib='docker image build'
 alias dkih='docker image history'
@@ -95,15 +89,19 @@ alias dkiph='docker image push'
 alias dkirm='docker image rm'
 alias dkisv='docker image save'
 alias dkit='docker image tag'
+#}}}***********************************************************
 
-## Volume (v)
+#{{{                    MARK:volume
+#**************************************************************
 alias dkv='docker volume'
 alias dkvin='docker volume inspect'
 alias dkvls='docker volume ls'
 alias dkvpr='docker volume prune'
 alias dkvrm='docker volume rm'
+#}}}***********************************************************
 
-## Network (n)
+#{{{                    MARK:network
+#**************************************************************
 alias dkn='docker network'
 alias dkns='docker network connect'
 alias dknx='docker network disconnect'
@@ -111,22 +109,27 @@ alias dknin='docker network inspect'
 alias dknls='docker network ls'
 alias dknpr='docker network prune'
 alias dknrm='docker network rm'
+#}}}***********************************************************
 
-## System (y)
+#{{{                    MARK:system
+#**************************************************************
 alias dky='docker system'
 alias dkydf='docker system df'
 alias dkypr='docker system prune'
+#}}}***********************************************************
 
-## Stack (k)
+#{{{                    MARK:stack
+#**************************************************************
 alias dkk='docker stack'
 alias dkkls='docker stack ls'
 alias dkkps='docker stack ps'
 alias dkKrm='docker stack rm'
+#}}}***********************************************************
 
-## Swarm (w)
+#{{{                    MARK:misc
+#**************************************************************
 alias dkw='docker swarm'
 
-## CleanUp (rm)
 # Clean up exited containers (docker < 1.13)
 alias dkrmc='docker rm $(docker ps -qaf status=exited)'
 
@@ -138,8 +141,10 @@ alias dkpli='docker images --format "{{ .Repository }}" | grep -v "^<none>$" | x
 
 # Clean up dangling volumes (docker < 1.13)
 alias dkrmv='docker volume rm $(docker volume ls -qf dangling=true)'
+#}}}***********************************************************
 
-# Docker Machine (m)
+#{{{                    MARK:machine
+#**************************************************************
 alias dkm='docker-machine'
 alias dkma='docker-machine active'
 alias dkmcp='docker-machine scp'
@@ -159,29 +164,32 @@ alias dkmu='docker-machine url'
 alias dkmup='docker-machine upgrade'
 alias dkmv='docker-machine version'
 alias dkmx='docker-machine stop'
+#}}}***********************************************************
 
-# Docker Compose (C)
-alias dkC='docker-compose'
-alias dkCb='docker-compose build'
-alias dkCB='docker-compose build --no-cache'
-alias dkCd='docker-compose down'
-alias dkCe='docker-compose exec -e COLUMNS=`tput cols` -e LINES=`tput lines`'
-alias dkCk='docker-compose kill'
-alias dkCl='docker-compose logs'
-alias dkCL='docker-compose logs -f'
-alias dkCls='docker-compose ps'
-alias dkCp='docker-compose pause'
-alias dkCP='docker-compose unpause'
-alias dkCpl='docker-compose pull'
-alias dkCph='docker-compose push'
-alias dkCps='docker-compose ps'
-alias dkCr='docker-compose run -e COLUMNS=`tput cols` -e LINES=`tput lines`'
-alias dkCR='docker-compose run -e COLUMNS=`tput cols` -e LINES=`tput lines` --rm'
-alias dkCrm='docker-compose rm'
-alias dkCs='docker-compose start'
-alias dkCsc='docker-compose scale'
-alias dkCS='docker-compose restart'
-alias dkCu='docker-compose up'
-alias dkCU='docker-compose up -d'
-alias dkCv='docker-compose version'
-alias dkCx='docker-compose stop'
+#{{{                    MARK:compose
+#**************************************************************
+alias dco='docker-compose'
+alias dcb='docker-compose build'
+alias dcB='docker-compose build --no-cache'
+alias dcd='docker-compose down'
+alias dce='docker-compose exec -e COLUMNS=`tput cols` -e LINES=`tput lines`'
+alias dck='docker-compose kill'
+alias dclo='docker-compose logs'
+alias dcL='docker-compose logs -f'
+alias dcls='docker-compose ps'
+alias dcp='docker-compose pause'
+alias dcP='docker-compose unpause'
+alias dcpl='docker-compose pull'
+alias dcph='docker-compose push'
+alias dcps='docker-compose ps'
+alias dcr='docker-compose run -e COLUMNS=`tput cols` -e LINES=`tput lines`'
+alias dcR='docker-compose run -e COLUMNS=`tput cols` -e LINES=`tput lines` --rm'
+alias dcrm='docker-compose rm'
+alias dcs='docker-compose start'
+alias dcsc='docker-compose scale'
+alias dcS='docker-compose restart'
+alias dcU='docker-compose up'
+alias dcu='docker-compose up -d'
+alias dcv='docker-compose version'
+alias dcx='docker-compose stop'
+#}}}***********************************************************

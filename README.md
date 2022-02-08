@@ -175,31 +175,31 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 
 ### Docker Compose
 
-- `dkC` is short for `docker-compose`
-- `dkCb` Build or rebuild services
-- `dkCB` Build or rebuild services and do not use cache when building the image
-- `dkCd` Stop and remove containers, networks, images, and volumes
-- `dkCe` Execute a command in a running container
-- `dkCk` Kill containers
-- `dkCl` View output from containers
-- `dkCL` View and follow (`-f`) output from containers
-- `dkCls` is alias for `dkcps`
-- `dkCp` Pause services
-- `dkCP` Unpause services
-- `dkCpl` Pull service images
-- `dkCph` Push service images
-- `dkCps` List containers
-- `dkCr` Run a one-off command
-- `dkCR` Run a one-off command and remove container after run.
-- `dkCrm` Remove stopped containers
-- `dkCs` Start services
-- `dkCsc` Set number of containers for a service
-- `dkCS` Restart services
-- `dkCu` Create and start containers
-- `dkCU` Create and start containers in detached mode:
+- `dc` is short for `docker-compose`
+- `dcb` Build or rebuild services
+- `dcB` Build or rebuild services and do not use cache when building the image
+- `dcd` Stop and remove containers, networks, images, and volumes
+- `dce` Execute a command in a running container
+- `dck` Kill containers
+- `dclo` View output from containers
+- `dcL` View and follow (`-f`) output from containers
+- `dcls` is alias for `dkcps`
+- `dcp` Pause services
+- `dcP` Unpause services
+- `dcpl` Pull service images
+- `dcph` Push service images
+- `dcps` List containers
+- `dcr` Run a one-off command
+- `dcR` Run a one-off command and remove container after run.
+- `dcrm` Remove stopped containers
+- `dcs` Start services
+- `dcsc` Set number of containers for a service
+- `dcS` Restart services
+- `dcu` Create and start containers
+- `dcU` Create and start containers in detached mode:
            Run Containers in the background, print new container names
-- `dkCV` Show the Docker-Compose version information
-- `dkCx` Stop services
+- `dcV` Show the Docker-Compose version information
+- `dcx` Stop services
 
 ## Author
 
