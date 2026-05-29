@@ -49,3 +49,45 @@
     done
     assert "$missing" is_empty
 }
+
+#--------------------------------------------------------------
+# Round 2: docker-aliases module contract pins
+#--------------------------------------------------------------
+
+@test 'plugin returns early when docker binary is missing (guards $+commands[docker])' {
+    # Pin: if docker isn't installed, sourcing must abort gracefully
+    # rather than emit errors when subsequent aliases try to invoke it.
+    local body
+    body=$(cat "$pluginDir/docker-aliases.plugin.zsh")
+    assert "$body" contains '$+commands[docker]'
+    assert "$body" contains 'return 1'
+}
+
+@test 'plugin sources alias.zsh at the end via ${0:h}/alias.zsh' {
+    # The aliases live in alias.zsh; the entrypoint must source it
+    # via the relative-to-script form so the plugin works under any
+    # plugin manager.
+    local body
+    body=$(cat "$pluginDir/docker-aliases.plugin.zsh")
+    assert "$body" contains '${0:h}/alias.zsh'
+}
+
+@test 'dkme / dkmd functions guard against missing docker-machine' {
+    # The two docker-machine helpers both check $+commands[docker-machine];
+    # without the guard, calling them on a fresh box would silently
+    # leak `eval $(docker-machine env ...)` errors into the user's shell.
+    local body
+    body=$(cat "$pluginDir/docker-aliases.plugin.zsh")
+    assert "$body" contains 'function dkme'
+    assert "$body" contains 'function dkmd'
+    assert "$body" contains '$+commands[docker-machine]'
+}
+
+@test 'alias.zsh holds 100+ Docker shorthands' {
+    # The plugin's value proposition is the alias volume; pin a
+    # lower bound so accidental truncation surfaces.
+    local count
+    count=$(grep -c '^alias ' "$pluginDir/alias.zsh")
+    [[ $count -ge 100 ]]
+    assert $state equals 0
+}
