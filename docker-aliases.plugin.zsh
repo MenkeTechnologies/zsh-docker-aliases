@@ -38,7 +38,7 @@ function dkmd {
     fi
 
     if [[ -L default ]]; then
-        eval $(rm -f default)
+        rm -f default
     elif [[ -d default ]]; then
         echo "A default manchine already exists. Abort."
         popd
@@ -49,7 +49,7 @@ function dkmd {
         return 1
     fi
 
-    eval $(ln -s $1 default)
+    ln -s "$1" default
     popd
 }
 
