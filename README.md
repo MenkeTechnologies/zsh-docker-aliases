@@ -76,8 +76,7 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dkca` Attach to a running container
 - `dkccp` Copy files/folders between a container and the local filesystem
 - `dkcd` Inspect changes on a container's filesystem
-- `dkce` Run a command in a running container
-- `dkcE` Run an interactive command in a running container
+- `dkce` Run an interactive command in a running container
 - `dkcin` Display detailed information on one or more containers
 - `dkck` Kill one or more running containers
 - `dkcl` Fetch the logs of a container
@@ -88,9 +87,9 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dkcrn` Rename a container
 - `dkcS` Restart one or more containers
 - `dkcrm` Remove one or more containers
-- `dkcr` Run a command in a new container
+- `dkcr` Run an interactive command in a new container
 - `dkcR` Run an interactive command in a new container and automatically remove the container when it exits
-- `dkcRe` like `dkCR` and set entry point to `/bin/bash`
+- `dkcre` like `dkcR` and set entry point to `/bin/bash`
 - `dkcs` Start one or more stopped containers
 - `dkcss` Display a live stream of container(s) resource usage statistics
 - `dkcx` Stop one or more running containers
