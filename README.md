@@ -24,16 +24,15 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 
 - `dk` is short for `docker`
 - `dka` Attach to a running container
-- `dka!` Attach to a running container by name
 - `dkb` Build an image from a Dockerfile
 - `dkd` Inspect changes on a container's filesystem
 - `dkdf` Show docker filesystem usage
 - `dke` Run a command in a running container
 - `dkE` Run an interactive command in a running container
-- `dkE!` Run an interactive command in a running container by name
 - `dkh` Show the history of an image
-- `dki` List images
+- `dkis` List images
 - `dkin` Return low-level information on a container, image or task
+- `dkim` Import the contents from a tarball to create a filesystem image
 - `dkk` Kill a running container
 - `dkkh` Send `kill -s HUP` signal to a running container
 - `dkl` Fetch the logs of a container
@@ -41,22 +40,21 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dkli` Log in to a Docker registry
 - `dklo` Log out from a Docker registry
 - `dkls` is alias for `dkps`
-- `dkp` Pause all processes within one or more containers<Paste>
+- `dkp` Pause all processes within one or more containers
 - `dkP` Unpause all processes within one or more containers
 - `dkpl` Pull an image or a repository from a registry
-- `dkplI` Pull all tagged images
 - `dkph` Push an image or a repository to a registry
 - `dkps` List containers
-- `dkps!` Display the first matching docker container ID by name
 - `dkpsa` List all containers (default lists just running)
+- `dkpsv` List containers in a vertical key/value format
 - `dkr` Run a command in a new container
 - `dkR` Run an interactive command in a new container and automatically remove the container when it exits
 - `dkRe` like `dkR` and set entry point to `/bin/bash`
+- `dkRM` Remove unused data (`docker system prune`)
 - `dkrm` Remove one or more containers
-- `dkrmi` Remove one or more images
-- `dkrmC` Clean up exited containers
-- `dkrmI` Clean up dangling images
-- `dkrmV` Clean up unused volumes ( Docker >= 1.9 )
+- `dkrmi` Clean up dangling images
+- `dkrmc` Clean up exited containers
+- `dkrmv` Clean up dangling volumes
 - `dkrn` Rename a container
 - `dks` Start one or more stopped containers
 - `dkS` Restart a container
@@ -65,9 +63,10 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dkt` Tag an image into a repository
 - `dktop` Display the running processes of a container
 - `dkup` Update configuration of one or more containers
-- `dkV` Manage Docker volumes
-- `dkv` Show the Docker version information
-- `dkw` Block until a container stops, then print its exit code<Paste>
+- `dkv` Manage Docker volumes
+- `dkvs` Show the Docker version information
+- `dkpli` Pull all tagged images
+- `dkw` Block until a container stops, then print its exit code
 - `dkx` Stop a running container
 
 #### container (c)
@@ -90,6 +89,7 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dkcr` Run an interactive command in a new container
 - `dkcR` Run an interactive command in a new container and automatically remove the container when it exits
 - `dkcre` like `dkcR` and set entry point to `/bin/bash`
+- `dkcrd` Run a command in a new detached container
 - `dkcs` Start one or more stopped containers
 - `dkcss` Display a live stream of container(s) resource usage statistics
 - `dkcx` Stop one or more running containers
@@ -139,9 +139,9 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 
 #### stack (K)
 
-- `dkK` Manage Docker stacks
-- `dkKls` List stacks
-- `dkKps` List the tasks in the stack
+- `dkk` Manage Docker stacks
+- `dkkls` List stacks
+- `dkkps` List the tasks in the stack
 - `dkKrm` Remove the stack
 
 #### swarm (W)
@@ -160,7 +160,7 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dkmk` Kill a machine
 - `dkmls` List machines
 - `dkmpr` Re-provision existing machines
-- `dkmps` is alias for `dkmls`
+- `dkmps` is short for `docker-machine ps`
 - `dkmrg` Regenerate TLS Certificates for a machine
 - `dkmrm` Remove a machine
 - `dkms` Start a machine
@@ -169,12 +169,12 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dkmS` Restart a machine
 - `dkmu` Get the URL of a machine
 - `dkmup` Upgrade a machine to the latest version of Docker
-- `dkmV` Show the Docker Machine version or a machine docker version
+- `dkmv` Show the Docker Machine version or a machine docker version
 - `dkmx` Stop a machine
 
 ### Docker Compose
 
-- `dc` is short for `docker-compose`
+- `dco` is short for `docker-compose`
 - `dcb` Build or rebuild services
 - `dcB` Build or rebuild services and do not use cache when building the image
 - `dcd` Stop and remove containers, networks, images, and volumes
@@ -182,7 +182,7 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dck` Kill containers
 - `dclo` View output from containers
 - `dcL` View and follow (`-f`) output from containers
-- `dcls` is alias for `dkcps`
+- `dcls` is alias for `dcps`
 - `dcp` Pause services
 - `dcP` Unpause services
 - `dcpl` Pull service images
@@ -194,10 +194,9 @@ cd "$HOME/.oh-my-zsh/custom/plugins" && git clone https://github.com/MenkeTechno
 - `dcs` Start services
 - `dcsc` Set number of containers for a service
 - `dcS` Restart services
-- `dcu` Create and start containers
-- `dcU` Create and start containers in detached mode:
-           Run Containers in the background, print new container names
-- `dcV` Show the Docker-Compose version information
+- `dcU` Create and start containers
+- `dcu` Create and start containers in detached mode (run containers in the background)
+- `dcv` Show the Docker-Compose version information
 - `dcx` Stop services
 
 ## Author
